@@ -3731,6 +3731,7 @@ public final class Settings {
         public static final String NAVIGATION_BAR_SHOW = "navigation_bar_show";
 
         /**
+<<<<<<< HEAD
          * Show or hide clock
          * 0 - hide
          * 1 - show (default)
@@ -3794,6 +3795,20 @@ public final class Settings {
          * @hide
          */
         public static final String STATUSBAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
+        
+        /**
+         * MediaScanner behavior on boot.
+         * 0 = enabled
+         * 1 = ask (notification)
+         * 2 = disabled
+         * @hide
+         */
+        public static final String MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
+
+        /**
+         * Completion of Liquid Nougat System Settings
+         * @hide
+         */        
 
         /**
          * Whether volume button press shuld be treated as wake key
@@ -6563,7 +6578,6 @@ public final class Settings {
          */
         public static final String AUTOMATIC_STORAGE_MANAGER_BYTES_CLEARED =
                 "automatic_storage_manager_bytes_cleared";
-
 
         /**
          * Last run time for the automatic storage manager.
