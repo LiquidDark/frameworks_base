@@ -681,4 +681,8 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
     private void updateBatteryLevelText() {
         FontSizeUtils.updateFontSize(mBatteryLevelView, R.dimen.battery_level_text_size);
     }
+
+    private void updateBatteryLevelText() {
+        FontSizeUtils.updateFontSize(mBatteryLevelView, R.dimen.battery_level_text_size);
+    }
 }
