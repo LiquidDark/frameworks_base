@@ -1488,7 +1488,6 @@ public final class ActivityManagerService extends ActivityManagerNative
     static final int SERVICE_TIMEOUT_MSG = 12;
     static final int UPDATE_TIME_ZONE = 13;
     static final int SHOW_UID_ERROR_UI_MSG = 14;
-    static final int SHOW_FINGERPRINT_ERROR_UI_MSG = 15;
     static final int PROC_START_TIMEOUT_MSG = 20;
     static final int DO_PENDING_ACTIVITY_LAUNCHES_MSG = 21;
     static final int KILL_APPLICATION_MSG = 22;
@@ -1680,19 +1679,7 @@ public final class ActivityManagerService extends ActivityManagerNative
                             obtainMessage(DISMISS_DIALOG_UI_MSG, d));
                     d.show();
                 }
-            } break;
-            case SHOW_FINGERPRINT_ERROR_UI_MSG: {
-                if (mShowDialogs) {
-                    AlertDialog d = new BaseErrorDialog(mContext);
-                    d.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ERROR);
-                    d.setCancelable(false);
-                    d.setTitle(mContext.getText(R.string.android_system_label));
-                    d.setMessage(mContext.getText(R.string.system_error_manufacturer));
-                    d.setButton(DialogInterface.BUTTON_POSITIVE, mContext.getText(R.string.ok),
-                            obtainMessage(DISMISS_DIALOG_UI_MSG, d));
-                    d.show();
-                }
-            } break;
+              } break;
             case SHOW_COMPAT_MODE_DIALOG_UI_MSG: {
                 synchronized (ActivityManagerService.this) {
                     ActivityRecord ar = (ActivityRecord) msg.obj;
@@ -13361,11 +13348,6 @@ public final class ActivityManagerService extends ActivityManagerNative
                     mUiHandler.obtainMessage(SHOW_UID_ERROR_UI_MSG).sendToTarget();
                 }
             } catch (RemoteException e) {
-            }
-
-            if (!Build.isBuildConsistent()) {
-                Slog.e(TAG, "Build fingerprint is not consistent, warning user");
-                mUiHandler.obtainMessage(SHOW_FINGERPRINT_ERROR_UI_MSG).sendToTarget();
             }
 
             long ident = Binder.clearCallingIdentity();
