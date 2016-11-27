@@ -3978,7 +3978,7 @@ public final class Settings {
             NOTIFICATION_SOUND,
             ACCELEROMETER_ROTATION,
             NOTIFICATION_LIGHT_SCREEN_ON,
-            ALLOW_LIGHTS
+            ALLOW_LIGHTS,
             INCREASING_RING,
             INCREASING_RING_START_VOLUME,
             INCREASING_RING_RAMP_UP_TIME
