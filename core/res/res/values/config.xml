@@ -1048,7 +1048,7 @@
     <integer name="config_autoBrightnessDarkeningLightDebounce">8000</integer>
 
     <!-- Light sensor event rate in milliseconds for automatic brightness control. -->
-    <integer name="config_autoBrightnessLightSensorRate">250</integer>
+    <integer name="config_autoBrightnessLightSensorRate">150</integer>
 
     <!-- The maximum range of gamma adjustment possible using the screen
          auto-brightness adjustment setting. -->
